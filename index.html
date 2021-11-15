@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <link rel="stylesheet" href="styles.css">
+		<title>Differentiable Wavetable Synthesis: Online Supplement</title>
+	</head>
+	<body>
+
+    <tr>
+      	<th>
+          <h1>Differentiable Wavetable Synthesis: Online Supplement</h1>
+          <h3>Siyuan Shan<sup>1</sup>, Lamtharn Hantrakul<sup>2</sup>, Jitong Chen<sup>2</sup>, Matt Avent<sup>2</sup>, David Trevelyan<sup>2</sup></h3>
+          <h4><sup>1</sup>University of North Carolina (work completed while a PhD intern at ByteDance R&D)</h4>
+          <h4><sup>2</sup>Speech, Audio & Music Intelligence Team, ByteDance R&D</h4>
+        </th>
+    </tr>
+
+    <tr>
+        <th>
+          <h2>One-Shot Pitch Manipulations</h2>
+          <p>We initialize a model with the 20 wavetables shown above and train it on a 4 second snippet of piano.</p>
+            <table>
+              <tr>
+                <th>Method</th>
+                <th>Original Sample</th>
+                <th>Pitch -36</th>
+                <th>Pitch -24</th>
+                <th>Pitch -12</th>
+                <th>Pitch +12</th>
+                <th>Pitch +24</th>
+                <th>Pitch +36</th>
+              </tr>
+
+              <tr>
+                <td><code>Librosa.pitch_shift</code></td>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_0.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_-36.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_-24.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_-12.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_+12.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_+24.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_+36.wav" type="audio/wav">
+                </audio>
+                </th>
+
+              </tr>
+              <tr>
+                <td><code>DWTS Pretrain</code></td>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_0.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_-36.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_-24.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_-12.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_+12.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_+24.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_+36.wav" type="audio/wav">
+                </audio>
+                </th>
+
+              </tr>
+            </table>
+
+        </th>
+    </tr>
+
+
+	</body>
+</html>
