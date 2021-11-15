@@ -129,5 +129,120 @@
     </tr>
 
 
+    <tr>
+        <th>
+          <h2>One-Shot Pitch Manipulations</h2>
+          <p>We initialize a model with the 20 wavetables shown above and train it on a 4 second snippet of piano.</p>
+            <table>
+              <tr>
+                <th>Method</th>
+                <th>Original Sample</th>
+                <th>Pitch -36</th>
+                <th>Pitch -24</th>
+                <th>Pitch -12</th>
+                <th>Pitch +12</th>
+                <th>Pitch +24</th>
+                <th>Pitch +36</th>
+              </tr>
+
+              <tr>
+                <td><code>Librosa.pitch_shift</code></td>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_0.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_-36.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_-24.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_-12.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_+12.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_+24.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_+36.wav" type="audio/wav">
+                </audio>
+                </th>
+
+              </tr>
+              <tr>
+                <td><code>DWTS Pretrain</code></td>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/librosa_0.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_-36.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_-24.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_-12.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_+12.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_+24.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+                <audio id="player" audio controls>
+                  <source src="./audio/diffdwts_+36.wav" type="audio/wav">
+                </audio>
+                </th>
+
+              </tr>
+            </table>
+
+        </th>
+    </tr>
+
+
+
 	</body>
 </html>
