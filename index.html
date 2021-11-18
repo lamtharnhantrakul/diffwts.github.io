@@ -17,18 +17,18 @@
 
     <tr>
         <th>
-          <h2>One-Shot Pitch Manipulations</h2>
+          <h2>One-Shot Pitch Manipulations compared with Librosa</h2>
           <p>We initialize a model with the 20 wavetables shown above and train it on a 4 second snippet of piano.</p>
             <table>
               <tr>
                 <th>Method</th>
                 <th>Original Sample</th>
-                <th>Pitch -36</th>
-                <th>Pitch -24</th>
-                <th>Pitch -12</th>
-                <th>Pitch +12</th>
-                <th>Pitch +24</th>
-                <th>Pitch +36</th>
+                <th>Pitch -3 octaves</th>
+                <th>Pitch -2 octaves</th>
+                <th>Pitch -1 octave</th>
+                <th>Pitch +1 octave</th>
+                <th>Pitch +2 octaves</th>
+                <th>Pitch +3 octaves</th>
               </tr>
 
               <tr>
@@ -36,43 +36,43 @@
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_0.wav" type="audio/wav">
+                  <source src="./librosa/librosa_0.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_-36.wav" type="audio/wav">
+                  <source src="./librosa/librosa_-3.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_-24.wav" type="audio/wav">
+                  <source src="./librosa/librosa_-2.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_-12.wav" type="audio/wav">
+                  <source src="./librosa/librosa_-1.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_+12.wav" type="audio/wav">
+                  <source src="./librosa/librosa_+1.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_+24.wav" type="audio/wav">
+                  <source src="./librosa/librosa_+2.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_+36.wav" type="audio/wav">
+                  <source src="./librosa/librosa_+3.wav" type="audio/wav">
                 </audio>
                 </th>
 
@@ -82,43 +82,43 @@
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_0.wav" type="audio/wav">
+                  <source src="./librosa/librosa_0.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_-36.wav" type="audio/wav">
+                  <source src="./librosa/diffdwts_-3.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_-24.wav" type="audio/wav">
+                  <source src="./librosa/diffdwts_-2.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_-12.wav" type="audio/wav">
+                  <source src="./librosa/diffdwts_-1.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_+12.wav" type="audio/wav">
+                  <source src="./librosa/diffdwts_+1.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_+24.wav" type="audio/wav">
+                  <source src="./librosa/diffdwts_+2.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_+36.wav" type="audio/wav">
+                  <source src="./librosa/diffdwts_+3.wav" type="audio/wav">
                 </audio>
                 </th>
 
@@ -131,112 +131,233 @@
 
     <tr>
         <th>
-          <h2>One-Shot Pitch Manipulations</h2>
-          <p>We initialize a model with the 20 wavetables shown above and train it on a 4 second snippet of piano.</p>
+          <h2>5.3 One shot learning and audio manipulations</h2>
+          <p>Given only a single 4 second passage of saxophone from the URMP dataset, we train a new autoencoder model initialized with pretrained wavetables (DWTS Pretrain). </p>
+					<p>This model only outputs time-varying attention weights, since the wavetables are now a fixed dictionary lookup. </p>
+					<p> We compare against three base-lines: (1) additive-synth autoencoder trained from scratch (Add Scratch), (2) finetuning an additive-synth autoencoder pretrained on Nsynth (Add Pretrain) and (3) Wavetable-synth autoencoder trained from scratch (DWTS Scratch).</p>
             <table>
               <tr>
-                <th>Method</th>
-                <th>Original Sample</th>
-                <th>Pitch -36</th>
-                <th>Pitch -24</th>
-                <th>Pitch -12</th>
-                <th>Pitch +12</th>
-                <th>Pitch +24</th>
-                <th>Pitch +36</th>
+								<th>Method </th>
+                <th>Pitch -3 octaves</th>
+                <th>Pitch -2 octaves</th>
+                <th>Pitch -1 octave</th>
+								<th>Original (no shift)</th>
+                <th>Pitch +1 octave</th>
+                <th>Pitch +2 octaves</th>
+                <th>Pitch +3 octaves</th>
               </tr>
 
               <tr>
-                <td><code>Librosa.pitch_shift</code></td>
+                <td>Additive Scratch</td>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_scratch_-3.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_0.wav" type="audio/wav">
+                  <source src="./saxophone/add_scratch_-3.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_scratch_-2.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_-36.wav" type="audio/wav">
+                  <source src="./saxophone/add_scratch_-2.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_scratch_-1.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_-24.wav" type="audio/wav">
+                  <source src="./saxophone/add_scratch_-1.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_scratch_0.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_-12.wav" type="audio/wav">
+                  <source src="./saxophone/add_scratch_0.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_scratch_+1.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_+12.wav" type="audio/wav">
+                  <source src="./saxophone/add_scratch_+1.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_scratch_+2.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_+24.wav" type="audio/wav">
+                  <source src="./saxophone/add_scratch_+2.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_scratch_+3.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_+36.wav" type="audio/wav">
+                  <source src="./saxophone/add_scratch_+3.wav" type="audio/wav">
                 </audio>
                 </th>
 
               </tr>
               <tr>
-                <td><code>DWTS Pretrain</code></td>
+                <td>Additive Pretrain</td>
 
-                <th>
+								<th>
+								<img id="spectrogram" src="./saxophone/add_pretrain_-3.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/librosa_0.wav" type="audio/wav">
+                  <source src="./saxophone/add_pretrain_-3.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_pretrain_-2.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_-36.wav" type="audio/wav">
+                  <source src="./saxophone/add_pretrain_-2.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_pretrain_-1.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_-24.wav" type="audio/wav">
+                  <source src="./saxophone/add_pretrain_-1.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_pretrain_0.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_-12.wav" type="audio/wav">
+                  <source src="./saxophone/add_pretrain_0.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_pretrain_+1.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_+12.wav" type="audio/wav">
+                  <source src="./saxophone/add_pretrain_+1.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_pretrain_+2.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_+24.wav" type="audio/wav">
+                  <source src="./saxophone/add_pretrain_+2.wav" type="audio/wav">
                 </audio>
                 </th>
 
                 <th>
+								<img id="spectrogram" src="./saxophone/add_pretrain_+3.png">
                 <audio id="player" audio controls>
-                  <source src="./audio/diffdwts_+36.wav" type="audio/wav">
+                  <source src="./saxophone/add_pretrain_+3.wav" type="audio/wav">
                 </audio>
                 </th>
-
               </tr>
+
+							<tr>
+                <td>DWTS Scratch</td>
+
+								<th>
+								<img id="spectrogram" src="./saxophone/dwts_scratch_-3.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_scratch_-3.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_scratch_-2.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_scratch_-2.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_scratch_-1.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_scratch_-1.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_scratch_0.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_scratch_0.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_scratch_+1.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_scratch_+1.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_scratch_+2.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_scratch_+2.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_scratch_+3.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_scratch_+3.wav" type="audio/wav">
+                </audio>
+                </th>
+              </tr>
+
+							<tr>
+                <td>DWTS Pretrain (Best Quality)</td>
+
+								<th>
+								<img id="spectrogram" src="./saxophone/dwts_pretrain_-3.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_pretrain_-3.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_pretrain_-2.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_pretrain_-2.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_pretrain_-1.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_pretrain_-1.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_pretrain_0.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_pretrain_0.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_scratch_+1.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_scratch_+1.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_pretrain_+2.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_pretrain_+2.wav" type="audio/wav">
+                </audio>
+                </th>
+
+                <th>
+								<img id="spectrogram" src="./saxophone/dwts_pretrain_+3.png">
+                <audio id="player" audio controls>
+                  <source src="./saxophone/dwts_pretrain_+3.wav" type="audio/wav">
+                </audio>
+                </th>
+
             </table>
 
         </th>
